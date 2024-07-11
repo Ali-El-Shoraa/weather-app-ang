@@ -11,8 +11,10 @@ export class WeatherService {
   constructor(private http: HttpClient) {}
 
   getWeaterData(cityName: string): Observable<WeatherData> {
-    return this.http.get<WeatherData>(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=072ac97d06d6ea14d8fedd6301636898`
-    );
+    return this.http.get<WeatherData>(environment.apiUrl, {
+      params: new HttpParams()
+        .set('q', cityName)
+        .set('appid', environment.apiKey),
+    });
   }
 }
