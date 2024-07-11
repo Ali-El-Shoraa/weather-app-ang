@@ -12,7 +12,7 @@ export class WeatherService {
 
   getWeaterData(cityName: string): Observable<WeatherData> {
     return this.http.get<WeatherData>(
-      `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${environment.apiKey}`
+      `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=072ac97d06d6ea14d8fedd6301636898`
     );
   }
 }
